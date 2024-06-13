@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:lts
 
 WORKDIR /usr/src/app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-ENV PORT=3000
+ENV PORT=
 
 ENV MODEL_URL='https://storage.googleapis.com/cp-healhub/multidiseases-model/model.json'
 
