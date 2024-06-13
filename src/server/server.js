@@ -1,8 +1,6 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
-const loadModel = require('../services/loadModel'); // Assuming loadModel.js is in the same directory
-const predictClassification = require('../services/inferenceService'); // Assuming inferenceService.js is in the same directory
-const InputError = require('../exceptions/InputError'); // Assuming InputError.js is in the same directory
+// const loadModel = require('../services/loadModel'); // Assuming loadModel.js is in the same directory
 
 
 const init = async () => {

@@ -28,7 +28,7 @@ async function predictClassification(model, inputData) {
         'Vertigo'
     ];
     const prediction = model.predict(inputTensor);
-
+//https://storage.googleapis.com/cp-healhub/key/cp-healhub-6d45a7bab732.json
     // Process prediction result
     const classResult = tf.argMax(prediction, 1).dataSync()[0];
     const label = class_name[classResult]
