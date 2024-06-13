@@ -18,16 +18,16 @@ const init = async () => {
     });
 
     // Load the TensorFlow.js model
-    let model;
-    try {
-        model = await loadModel();
-    } catch (error) {
-        console.error('Failed to load the model:', error);
-        process.exit(1); // Terminate the process if model loading fails
-    }
+    // let model;
+    // try {
+    //     model = await loadModel();
+    // } catch (error) {
+    //     console.error('Failed to load the model:', error);
+    //     process.exit(1); // Terminate the process if model loading fails
+    // }
 
-    // Attach the model to the server.app context
-    server.app.model = model;
+    // // Attach the model to the server.app context
+    // server.app.model = model;
 
     // Define routes in the server
 
