@@ -1,10 +1,5 @@
-FROM node:lts
-
+FROM node:20
 WORKDIR /app
-
-
-RUN npm install
-
 COPY . .
-
-CMD ["npm", "start"]
+RUN npm i
+CMD ["npm", "run", "start"]
