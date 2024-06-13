@@ -14,7 +14,6 @@ async function postPredict(request, h) {
     const db = new Firestore({
         databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
-        keyFilename: process.env.GCLOUD_KEY_FILE,
     });
 
     // Validate inputData
@@ -51,7 +50,6 @@ async function getPredictHistories(request, h) {
     const db = new Firestore({
         databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
-        keyFilename: process.env.GCLOUD_KEY_FILE,
     });
 
     const predictCollection = db.collection('predictions');
@@ -80,7 +78,6 @@ const registerHandler = async (request, h) => {
     const db = new Firestore({
         databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
-        keyFilename: process.env.GCLOUD_KEY_FILE,
     });
     // Check if the email already exists
     const userRef = db.collection('users').where('email', '==', email);
@@ -108,7 +105,6 @@ const loginHandler = async (request, h) => {
     const db = new Firestore({
         databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
-        keyFilename: process.env.GCLOUD_KEY_FILE,
     });
     const userRef = db.collection('login').where('email', '==', email);
     const snapshot = await userRef.get();
