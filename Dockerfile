@@ -1,5 +1,15 @@
-FROM node:20
-WORKDIR /app
+FROM node:lts
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
 COPY . .
-RUN npm i
-CMD ["npm", "run", "start"]
+
+ENV PORT 3000
+
+EXPOSE 3000
+
+CMD [ "npm", "start" ]
