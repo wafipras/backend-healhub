@@ -1,4 +1,4 @@
-FROM node:22
+FROM node:14
 
 WORKDIR /usr/src/app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-ENV PORT 3000
+ENV PORT=3000
 
 EXPOSE 3000
 
