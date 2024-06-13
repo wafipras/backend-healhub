@@ -106,7 +106,7 @@ const loginHandler = async (request, h) => {
         databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
     });
-    const userRef = db.collection('login').where('email', '==', email);
+    const userRef = db.collection('users').where('email', '==', email);
     const snapshot = await userRef.get();
 
     if (snapshot.empty) {
