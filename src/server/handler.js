@@ -12,7 +12,7 @@ async function postPredict(request, h) {
 
     // Initialize Firestore
     const db = new Firestore({
-        databaseId: 'healhub-data',
+        databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
     });
 
@@ -48,7 +48,7 @@ async function postPredict(request, h) {
 async function getPredictHistories(request, h) {
     // Initialize Firestore
     const db = new Firestore({
-        databaseId: 'healhub-data',
+        databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
     });
 
@@ -76,7 +76,7 @@ async function getPredictHistories(request, h) {
 const registerHandler = async (request, h) => {
     const { username, email, password } = request.payload;
     const db = new Firestore({
-        databaseId: 'healhub-data',
+        databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
     });
     // Check if the email already exists
@@ -103,7 +103,7 @@ const registerHandler = async (request, h) => {
 const loginHandler = async (request, h) => {
     const { email, password } = request.payload;
     const db = new Firestore({
-        databaseId: 'healhub-data',
+        databaseId: 'healhub',
         projectId: process.env.GCLOUD_PROJECT,
     });
     const userRef = db.collection('users').where('email', '==', email);
