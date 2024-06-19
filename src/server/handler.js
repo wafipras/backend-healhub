@@ -7,7 +7,7 @@ const { Firestore } = require('@google-cloud/firestore');
 require('dotenv').config(); // Load environment variables from .env file
 
 async function postPredict(request, h) {
-    const { inputData, email } = request.payload;  // Extract email from the request payload
+    const { inputData } = request.payload;
     const model = request.server.app.model; // Get the model from the server's context
 
     // Initialize Firestore
@@ -30,8 +30,7 @@ async function postPredict(request, h) {
         id,
         classResult,
         label,
-        createdAt,
-        email // Attach the email to the prediction data
+        createdAt
     };
 
     await storePredictionData(id, data);
