@@ -21,7 +21,7 @@ const routes = [
     method: 'GET',
     path: '/',
     handler: (request, h) => {
-        return 'Welcome to healhub';
+        return 'Welcome to healHub';
     }
   },
   {
